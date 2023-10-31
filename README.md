@@ -27,39 +27,42 @@ Step 7: Save and run the application.
 
 ## PROGRAM:
 ```
-/*
-Program to print the text “Hello World”.
-Developed by: Jagan S
-Registeration Number : 212221040061
-*/
-
-XML-CODE :
-
+Developed by: Jagan S 
+Reg.no:212221040061
+```
+## activity_main.xml
+```
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="TIM"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="334dp"
-        android:layout_height="96dp"
-        android:layout_marginStart="90dp"
-        android:layout_marginTop="286dp"
-        android:text="LIFE CYCLE"
-        android:textColor="#673AB7"
-        android:textSize="36sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World\nThis is Hiba...!!"
+        android:textSize="30dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColorHighlight="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.455"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.407" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-Main Activity : 
-package com.example.androidlifecycle;
+```
+## MainActivity.java
+```
+package com.example.hiba;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -69,41 +72,40 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toast toast = Toast.makeText(getApplicationContext(),"Oncreate",Toast.LENGTH_SHORT);
-        toast.show();
+        Toast t2= Toast.makeText(getApplicationContext(),"OnCreate Executed",Toast.LENGTH_LONG);
+        t2.show();
     }
-    protected void onStart(){
+    protected void onStart() {
         super.onStart();
-        Toast toast = Toast.makeText(getApplicationContext(),"Onstart",Toast.LENGTH_SHORT);
-        toast.show();
+        setContentView(R.layout.activity_main);
+        Toast t2= Toast.makeText(getApplicationContext(),"OnStart Executed",Toast.LENGTH_LONG);
+        t2.show();
     }
-    protected void onPause(){
-        super.onPause();
-        Toast toast = Toast.makeText(getApplicationContext(),"Onpause",Toast.LENGTH_SHORT);
-        toast.show();
-    }
-    protected void onResume(){
+    protected void onResume() {
         super.onResume();
-        Toast toast = Toast.makeText(getApplicationContext(),"onResume",Toast.LENGTH_SHORT);
-        toast.show();
+        setContentView(R.layout.activity_main);
+        Toast t2= Toast.makeText(getApplicationContext(),"OnResume Executed",Toast.LENGTH_LONG);
+        t2.show();
     }
-    protected void onStop(){
-        super.onStop();
-        Toast toast = Toast.makeText(getApplicationContext(),"OnStop",Toast.LENGTH_SHORT);
-        toast.show();
+    protected void onPause() {
+        super.onPause();
+        setContentView(R.layout.activity_main);
+        Toast t2= Toast.makeText(getApplicationContext(),"OnPause Executed",Toast.LENGTH_LONG);
+        t2.show();
     }
-    protected  void onDestroy(){
-        super.onDestroy();
-        Toast toast = Toast.makeText(getApplicationContext(),"onDestroy",Toast.LENGTH_SHORT);
-        toast.show();
-    }
-    protected void onRestart(){
+    protected void onRestart() {
         super.onRestart();
-        Toast toast = Toast.makeText(getApplicationContext(),"onRestart",Toast.LENGTH_SHORT);
-        toast.show();
+        setContentView(R.layout.activity_main);
+        Toast t2= Toast.makeText(getApplicationContext(),"OnRestart Executed",Toast.LENGTH_LONG);
+        t2.show();
+    }
+    protected void onDestroy() {
+        super.onDestroy();
+        setContentView(R.layout.activity_main);
+        Toast t2= Toast.makeText(getApplicationContext(),"OnDestroy Executed",Toast.LENGTH_LONG);
+        t2.show();
     }
 }
-
 ```
 
 ## OUTPUT
